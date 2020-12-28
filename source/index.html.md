@@ -1,15 +1,13 @@
 ---
-title: API Reference
+title: Cashmos API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
+  - php
   - javascript
+  - java
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a target='_blank' href='http://cashmos.herokuapp.com'>Register for a free Cashmos Account</a>
 
 includes:
   - errors
@@ -19,47 +17,44 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Cashmos Developer API. This API documentation will guide you through how to connect to Cashmos and use the services offered in a seamless manner.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+The following sections cover the various components of the API.
 
 # Authentication
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
+```php
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+Install the php sdk using: 
+> composer require cashmos/cashmos-php-api
 
-```python
-import kittn
+<?php
 
-api = kittn.authorize('meowmeowmeow')
-```
+$clientId = 'YOUR-BUSINESS-CLIENT-ID';
+$secret = 'YOUR-BUSINESS-SECRET';
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+$cashmos = new Cashmos\Cashmos($clientId, $secret);
+
 ```
 
 ```javascript
-const kittn = require('kittn');
+const cashmos = require('cashmos');
 
-let api = kittn.authorize('meowmeowmeow');
+
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+```java
+import com.cashmos.cashmos;
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+```
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+> See the sdk on github for other methods of installation.
 
-`Authorization: meowmeowmeow`
+All requests to Cashmos require a set of API keys. Every business account has a ``` client-id ``` and ``` secret ``` which can be found on the dashboard of your business, under the API tab.
+
+If you don't have a business account, register your business for free [here](http://cashmos.herokuapp.com).
 
 <aside class="notice">
 You must replace <code>meowmeowmeow</code> with your personal API key.
